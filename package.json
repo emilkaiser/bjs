@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "*",
-    "grunt-contrib-uglify": "*"
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-bower-task": "~0.3.2"
   }
 }
