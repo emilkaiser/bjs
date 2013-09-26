@@ -1,2 +1,0 @@
-/*! bjs 2013-08-30 */
-!function(a){a.bjs||(a.bjs={}),a.bjs.asyncLoop=function(){function a(a,b,e,f,g){var h,i;!function j(){for(i=0;a()&&d>i;)e(),b(),i+=1;f(),a()?h=setTimeout(j,c):(g(),clearTimeout(h))}()}var b,c=1,d=5;return b=function(b,c,d,e){var f,g,h,i=0,j=[];if("[object Array]"===Object.prototype.toString.call(b))h=b.length,g=function(){c.call(b[i])};else{for(f in b)b.hasOwnProperty(f)&&j.push(f);h=j.length,g=function(){c.call(b[j[i]],j[i])}}a(function(){return h>i},function(){i+=1},g,function(){d&&d(i,h)},function(){e&&e(i,h)})}}()}(this);

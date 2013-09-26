@@ -1,2 +1,0 @@
-/*! bjs 2013-08-30 */
-!function(a){a.bjs||(a.bjs={}),a.bjs.ie=function(){for(var a,b=3,c=document.createElement("div");c.innerHTML="<!--[if gt IE "+ ++b+"]><i></i><![endif]-->",c.getElementsByTagName("i")[0];);return b>4?b:a}(),window.Booli?Booli.ie=bjs.ie:window.Booli={ie:bjs.ie}}(this);

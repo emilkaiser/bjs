@@ -1,2 +1,0 @@
-/*! bjs 2013-08-30 */
-!function(a){a.bjs||(a.bjs={}),a.bjs.timer=function(a){this.d=Date.now||function(){return+new Date},a&&this.start()},a.bjs.timer.prototype={start:function(){return this.startTime=this.d(),this},stop:function(){return this.endTime=this.d(),this},result:function(){return((this.endTime||this.d())-this.startTime)/1e3}}}(this);

@@ -1,2 +1,0 @@
-/*! bjs 2013-08-30 */
-!function(a){a.bjs||(a.bjs={}),a.bjs.rnd={alnum:function(a){var b,c="",d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";for(b=0;a>b;b+=1)c+=d.charAt(Math.floor(Math.random()*d.length));return c},num:function(a){return parseInt((Math.random()+"").slice(2,2+a),10)}}}(this);
