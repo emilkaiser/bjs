@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-          'dist/b.js': ['src/number.js', 'src/async.js', 'src/dom.js', 'src/event.js', 'src/ie.js', 'src/screen.js', 'src/string.js'],
+          'dist/b.js': ['src/number.js', 'src/async.js', 'src/device.js', 'src/dom.js', 'src/event.js', 'src/ie.js', 'src/string.js'],
           'dist/plugins/jquery.all.js': ['src/plugins/jquery.parseparams.js']
         }
       }

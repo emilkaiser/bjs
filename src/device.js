@@ -20,27 +20,27 @@
  *   }
  * }
  */
-  root.bjs.screen = {
-    _currentScreen: 'desktop',
+  root.bjs.device = {
+    _type: 'desktop',
     initialize: function () {
-      this._currentScreen = this.getRecalculated();
+      this._type = this.getType(true);
     },
-    set: function () {
-      var screen = this._currentScreen;
+    setType: function () {
       if (root.getComputedStyle) {
-        screen = root.getComputedStyle(document.body, ':after').getPropertyValue('content').replace(/\"/g, '');
+        this._type = root.getComputedStyle(document.body, ':after').getPropertyValue('content').replace(/\"/g, '');
       }
-      this._currentScreen = screen || this._currentScreen;
     },
-    get: function () {
-      return this._currentScreen;
+    getType: function (recalculate) {
+      if (recalculate) {
+        this.setType();
+      }
+      return this._type;
     },
-    getRecalculated: function () {
-      this.set();
-      return this.get();
-    },
-    is: function (check) {
+    isType: function (check) {
       return this.get() === check;
+    },
+    isTouch: function () {
+      return (window.hasOwnProperty && window.hasOwnProperty('ontouchstart')) || (window.DocumentTouch && document instanceof DocumentTouch);
     }
   };
 }(this));
