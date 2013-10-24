@@ -21,6 +21,9 @@
  * }
  */
   root.bjs.device = {
+    DESKTOP: 'desktop',
+    TABLET: 'tablet',
+    PHONE: 'phone',
     _type: 'desktop',
     initialize: function () {
       this._type = this.getType(true);
