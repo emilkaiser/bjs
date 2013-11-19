@@ -30,7 +30,7 @@
     },
     setType: function () {
       if (root.getComputedStyle) {
-        this._type = root.getComputedStyle(document.body, ':after').getPropertyValue('content').replace(/\"/g, '');
+        this._type = root.getComputedStyle(document.body, ':after').getPropertyValue('content').replace(/\"/g, '') || this._type;
       }
     },
     getType: function (recalculate) {
