@@ -1,3 +1,5 @@
+/* global describe, it, expect, $ */
+/* jshint strict: false */
 describe('jquery.parseparams', function () {
   it('should parse correctly', function () {
     var r1 = $.parseParams('hej=da');

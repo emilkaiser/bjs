@@ -1,4 +1,6 @@
+/*global DocumentTouch, document, window */
 (function (root) {
+  'use strict';
   if (!root.bjs) {
     root.bjs = {};
   }
@@ -30,7 +32,9 @@
     },
     setType: function () {
       if (root.getComputedStyle) {
-        this._type = root.getComputedStyle(document.body, ':after').getPropertyValue('content').replace(/\"/g, '') || this._type;
+        this._type = root
+          .getComputedStyle(document.body, ':after')
+          .getPropertyValue('content').replace(/\"/g, '') || this._type;
       }
     },
     getType: function (recalculate) {
@@ -43,7 +47,8 @@
       return this.get() === check;
     },
     isTouch: function () {
-      return (window.hasOwnProperty && window.hasOwnProperty('ontouchstart')) || (window.DocumentTouch && document instanceof DocumentTouch);
+      return (window.hasOwnProperty && window.hasOwnProperty('ontouchstart')) ||
+        (window.DocumentTouch && document instanceof DocumentTouch);
     }
   };
 }(this));

@@ -1,4 +1,6 @@
+/* global setTimeout, clearTimeout */
 (function (root) {
+  'use strict';
   if (!root.bjs) {
     root.bjs = {};
   }

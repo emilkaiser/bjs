@@ -1,4 +1,6 @@
+/* global document, window, Booli */
 (function (root) {
+  'use strict';
   if (!root.bjs) {
     root.bjs = {};
   }
@@ -8,12 +10,12 @@
     while (
       div.innerHTML = '<!--[if gt IE '+(++v)+']><i></i><![endif]-->',
       div.getElementsByTagName('i')[0]
-    );
+    ) {}
     return v> 4 ? v : undef;
   }());
   if (window.Booli) {
-    Booli.ie = bjs.ie;
+    Booli.ie = root.bjs.ie;
   } else {
-    window.Booli = {ie: bjs.ie};
+    window.Booli = {ie: root.bjs.ie};
   }
 }(this));

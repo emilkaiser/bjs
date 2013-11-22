@@ -1,4 +1,6 @@
-describe('b.string.ucFirst', function () {
+/* global describe, it, expect, bjs */
+/* jshint strict: false */
+describe('bjs.string.ucFirst', function () {
   it('should capitalize first letter', function () {
     var r1 = bjs.string.ucFirst('a');
     expect(r1).toEqual('A');
@@ -14,14 +16,18 @@ describe('b.string.ucFirst', function () {
     expect(r6).toEqual('0');
   });
 });
-describe('b.string.random', function () {
+/* global describe, it, expect, bjs */
+/* jshint strict: false */
+describe('bjs.string.random', function () {
   it('should produce random results', function () {
     var r1 = bjs.string.random(5);
     var r2 = bjs.string.random(5);
     expect(r1).not.toEqual(r2);
   });
 });
-describe('b.string.hash', function () {
+/* global describe, it, expect, bjs */
+/* jshint strict: false */
+describe('bjs.string.hash', function () {
   it('should produce same result', function () {
     var r1 = bjs.string.hash('hej');
     var r2 = bjs.string.hash('hej');

@@ -1,3 +1,5 @@
+/* global module */
+/* jshint strict: false */
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -11,15 +13,28 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'src/**/*.js', 'specs/**/*.js']
+      all: ['Gruntfile.js', 'src/**/*.js', 'specs/**/*.js'],
+      options: {
+        force: true,
+        jshintrc: '.jshintrc'
+      }
     },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
-      my_target: {
+      target: {
         files: {
-          'dist/b.js': ['src/number.js', 'src/async.js', 'src/device.js', 'src/dom.js', 'src/event.js', 'src/ie.js', 'src/string.js'],
+          'dist/b.js': [
+            'src/number.js',
+            'src/async.js',
+            'src/device.js',
+            'src/dom.js',
+            'src/event.js',
+            'src/ie.js',
+            'src/string.js',
+            'src/string.slug.js'
+          ],
           'dist/plugins/jquery.all.js': ['src/plugins/jquery.parseparams.js']
         }
       }

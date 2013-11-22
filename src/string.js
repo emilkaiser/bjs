@@ -1,4 +1,5 @@
 (function (root) {
+  'use strict';
   if (!root.bjs) {
     root.bjs = {};
   }
@@ -9,7 +10,9 @@
       return str.charAt(0).toUpperCase() + str.substr(1);
     },
     random: function (length) {
-      var i, text = "", possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      var i,
+      text = '',
+      possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
       for (i = 0; i < length; i = i + 1) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
       }

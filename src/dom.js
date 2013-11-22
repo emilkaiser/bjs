@@ -1,4 +1,6 @@
+/* global document */
 (function (root) {
+  'use strict';
   if (!root.bjs) {
     root.bjs = {};
   }

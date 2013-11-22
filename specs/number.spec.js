@@ -1,4 +1,6 @@
-describe('b.number.pad', function () {
+/* global describe, it, expect, bjs */
+/* jshint strict: false */
+describe('bjs.number.pad', function () {
   it('should pad correctly', function () {
     var r1 = bjs.number.pad(123, 3);
     expect(r1).toEqual('123');
@@ -8,7 +10,7 @@ describe('b.number.pad', function () {
     expect(r3).toEqual('333123');
   });
 });
-describe('b.number.round', function () {
+describe('bjs.number.round', function () {
   it('should round correctly', function () {
     var r1 = bjs.number.round(0.123, 2);
     expect(r1).toEqual(0.12);
@@ -24,7 +26,7 @@ describe('b.number.round', function () {
     expect(r6).toEqual(1000);
   });
 });
-describe('b.number.format', function () {
+describe('bjs.number.format', function () {
   it ('ints', function () {
     var r1 = bjs.number.format(100);
     expect(r1).toEqual('100');
@@ -50,7 +52,7 @@ describe('b.number.format', function () {
     expect(r5).toEqual('1_000_000_000_000,23');
   });
 });
-describe('b.number.random', function () {
+describe('bjs.number.random', function () {
   it('should produce random results', function () {
     var r1 = bjs.number.random(5);
     var r2 = bjs.number.random(5);
