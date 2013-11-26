@@ -26,29 +26,25 @@
     DESKTOP: 'desktop',
     TABLET: 'tablet',
     PHONE: 'phone',
-    _type: 'desktop',
-    initialize: function () {
-      this._type = this.getType(true);
-    },
-    setType: function () {
+    default: 'desktop',
+    getType: function () {
       if (root.getComputedStyle) {
-        this._type = root
+        return root
           .getComputedStyle(document.body, ':after')
           .getPropertyValue('content').replace(/\"/g, '') || this._type;
       }
+      return this.default;
     },
-    getType: function (recalculate) {
-      if (recalculate) {
-        this.setType();
-      }
-      return this._type;
-    },
-    isType: function (check) {
-      return this.get() === check;
-    },
-    isTouch: function () {
-      return (window.hasOwnProperty && window.hasOwnProperty('ontouchstart')) ||
+    is: function (type) {
+      if (type === 'touch') {
+        return (window.hasOwnProperty && window.hasOwnProperty('ontouchstart')) ||
         (window.DocumentTouch && document instanceof DocumentTouch);
+      } else {
+        return this.getType() === type;
+      }
+    },
+    not: function (type) {
+      return !this.is(type);
     }
   };
 }(this));
