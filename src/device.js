@@ -26,14 +26,14 @@
     DESKTOP: 'desktop',
     TABLET: 'tablet',
     PHONE: 'phone',
-    default: 'desktop',
     getType: function () {
+      var type;
       if (root.getComputedStyle) {
-        return root
+        type = root
           .getComputedStyle(document.body, ':after')
           .getPropertyValue('content').replace(/\"/g, '') || this._type;
       }
-      return this.default;
+      return type || this.DESKTOP;
     },
     is: function (type) {
       if (type === 'touch') {
