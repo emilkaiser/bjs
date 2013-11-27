@@ -12,5 +12,9 @@ describe('jquery.parseparams', function () {
     expect(r4).toEqual({hej: 'da', ha: 'bra battre'});
     var r5 = $.parseParams('hej=da&ha=bra,battre');
     expect(r5).toEqual({hej: 'da', ha: 'bra,battre'});
+    var r6 = $.parseParams('?hej=da&ha=bra,battre');
+    expect(r6).toEqual({hej: 'da', ha: 'bra,battre'});
+    var r7 = $.parseParams('?hej=da');
+    expect(r7).toEqual({hej: 'da'});
   });
 });

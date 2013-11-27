@@ -5,7 +5,7 @@
  */
 (function() {
   'use strict';
-  var re = /([^&=]+)=?([^&]*)/g,
+  var re = /\??([^&=]+)=?([^&]*)/g,
   decodeRE = /\+/g,  // Regex for replacing addition symbol with a space
   decode = function (str) {
     return decodeURIComponent( str.replace(decodeRE, ' ') );
