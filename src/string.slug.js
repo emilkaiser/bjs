@@ -10,6 +10,18 @@
     throw new Error('bjs.string missing');
   }
 
+  var indexOf = function (array, value) {
+    if (array.indexOf) {
+      return array.indexOf(value);
+    } else if (root._ && root._.indexOf) {
+      return root._.indexOf(array, value);
+    } else if (root.jQuery) {
+      return root.jQuery.inArray(value, array);
+    } else {
+      throw new Error('Missing Array.indexOf or equivalent');
+    }
+  };
+
   root.bjs.string.slug = function (s, opt) {
     var str = String(s);
 
@@ -89,7 +101,7 @@
     };
 
     for (var k in map) {
-      if (options.preserve.indexOf(k) === -1) {
+      if (indexOf(options.preserve, k) === -1) {
         str = str.replace(new RegExp(k, 'g'), map[k]);
       }
     }
