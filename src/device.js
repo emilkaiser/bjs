@@ -31,7 +31,7 @@
       if (root.getComputedStyle) {
         type = root
           .getComputedStyle(document.body, ':after')
-          .getPropertyValue('content').replace(/\"/g, '') || this._type;
+          .getPropertyValue('content').replace(/\"/g, '');
       }
       return type || this.DESKTOP;
     },
