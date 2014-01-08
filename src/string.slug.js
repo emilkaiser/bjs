@@ -113,9 +113,9 @@
     }
     str = str.replace(new RegExp('[' + regexp + ']+', 'ig'), options.delimiter);
     // and duplicate delimiters
-    str = str.replace(new RegExp('[' + options.delimiter + ']{2,}', 'g'), options.delimiter);
+    str = str.replace(new RegExp('[\\' + options.delimiter + ']{2,}', 'g'), options.delimiter);
     // and delimiter from ends
-    str = str.replace(new RegExp('(^' + options.delimiter + '|' + options.delimiter + '$)', 'g'), '');
+    str = str.replace(new RegExp('(^\\' + options.delimiter + '|\\' + options.delimiter + '$)', 'g'), '');
 
     return str.toLowerCase();
   };
