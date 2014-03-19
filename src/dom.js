@@ -7,7 +7,8 @@
 
   root.bjs.dom = (function (d) {
     var el, id;
-    function inject (src, type) {
+    function inject (src, type, options) {
+      options = options || {};
       id = 'bjsdl_' + root.bjs.string.hash(src);
       if (d.getElementById(id)) {
         return;
@@ -24,20 +25,23 @@
       } else {
         el.async = true;
       }
+      for (var key in options) {
+        if (options.hasOwnProperty(key)) {
+          el[key] = options[key];
+        }
+      }
       d.body.appendChild(el);
     }
     return {
-      script: function (src) {
-        inject(src, 'script');
+      script: function (src, options) {
+        inject(src, 'script', options);
       },
-      iframe: function (src) {
-        inject(src, 'iframe');
+      iframe: function (src, options) {
+        inject(src, 'iframe', options);
       },
-      img: function (src) {
-        inject(src, 'img');
+      img: function (src, options) {
+        inject(src, 'img', options);
       }
     };
   }(document));
 }(this));
-
-
