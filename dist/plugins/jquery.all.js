@@ -1,2 +1,2 @@
-/*! bjs 2013-11-27 */
+/*! bjs 2014-03-20 */
 !function(){"use strict";var a=/\??([^&=]+)=?([^&]*)/g,b=/\+/g,c=function(a){return decodeURIComponent(a.replace(b," "))};jQuery.parseParams=function(b){for(var d={},e=a.exec(b);e;){var f=c(e[1]),g=c(e[2]);"[]"===f.substring(f.length-2)?(f=f.substring(0,f.length-2),(d[f]||(d[f]=[])).push(g)):d[f]=g,e=a.exec(b)}return d}}();
