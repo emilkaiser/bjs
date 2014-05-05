@@ -26,12 +26,12 @@ module.exports = function(grunt) {
       target: {
         files: {
           'dist/b.js': [
+            'src/ie.js',
             'src/number.js',
             'src/async.js',
             'src/device.js',
             'src/dom.js',
             'src/event.js',
-            'src/ie.js',
             'src/string.js',
             'src/string.slug.js'
           ],
