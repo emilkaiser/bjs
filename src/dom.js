@@ -23,12 +23,13 @@
 
   var merge = function (dst, src) {
     for (var key in src) {
-      if (src.hasOwnProperty(key)) {
+      if (hasOwnProperty.call(src, key)) {
         if (isHash(src[key])) {
-          dst[key] = dst[key] || {};
+          if (!dst[key]) {
+            dst[key] = {};
+          }
           merge(dst[key], src[key]);
-        }
-        else {
+        } else {
           dst[key] = src[key];
         }
       }

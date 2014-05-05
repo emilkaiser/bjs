@@ -1,6 +1,9 @@
 /* global document, window, Booli */
 (function (root) {
   'use strict';
+
+  window.hasOwnProperty = window.hasOwnProperty || Object.prototype.hasOwnProperty;
+
   if (!root.bjs) {
     root.bjs = {};
   }

@@ -45,7 +45,7 @@
         };
       } else {
         for (prop in mixed) {
-          if (mixed.hasOwnProperty(prop)) {
+          if (hasOwnProperty.call(mixed, prop)) {
             props.push(prop);
           }
         }
